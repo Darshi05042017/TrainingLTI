@@ -6,3 +6,7 @@
 [INFO] [2019-06-03T12:14:50.837 ]Some Message
 [WARNING] [2019-06-03T12:14:50.838 ]Again some Message
 [ERROR] [2019-06-03T12:14:50.839 ]Some critical message
+[INFO] [2019-06-03T14:18:28.647 ]App started successfully ....
+[INFO] [2019-06-03T14:18:28.698 ]Some Message
+[WARNING] [2019-06-03T14:18:28.700 ]Again some Message
+[ERROR] [2019-06-03T14:18:28.701 ]Some critical message

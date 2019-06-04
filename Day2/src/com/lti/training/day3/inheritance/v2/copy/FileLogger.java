@@ -6,7 +6,8 @@ import java.time.LocalDateTime;
 
 public class FileLogger extends Logger  {
 	public void log(String msg, LogLevel level) {
-		try(FileWriter fw= new FileWriter("app.log",true)){
+		try(FileWriter fw= new FileWriter("app.log",true)){ 
+			//using true so that it does not delete the previous log and continue from last log
 			switch(level) {
 			case INFO :
 				fw.write("[INFO] ["+LocalDateTime.now() + " ]"+msg +"\n");
