@@ -1,4 +1,4 @@
-package com.lti.training.day3.inheritance.v2.copy;
+package com.lti.training.day3.inheritance.v3;
 
 /**
  * A simple custom logger Implimentation

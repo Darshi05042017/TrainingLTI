@@ -9,6 +9,8 @@ public class App {
 		
 		double bill1=b1.generateBill(40);
 		System.out.println("Total bill for ordering 40 copies of "+ b1.getName()+" is "+bill1 );
+		double bill2=t1.generateBill(40);
+		System.out.println("Total bill for ordering 40 copies of "+ t1.getName()+" is "+bill2);
 	}
 
 }
