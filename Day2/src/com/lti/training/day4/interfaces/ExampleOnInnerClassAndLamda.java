@@ -58,8 +58,12 @@ public class ExampleOnInnerClassAndLamda {
 		//anonymous functions--a.k.a lambda expressions
 		// lamda expressions are nothing but anonymous inner classes in other  
 		Printer pr1 = (document)->{
+			//Printer pr = (String document)->{
 			System.out.println("Now printing"+document);
 		};
 		pr1.print("hello.txt");
+		Printer pt = doc->System.out.println("Now Printing " + doc);
+		//if this function takes 2 values than use Printer pt=doc,string,->
+		pt.print("hi.txt");
 	}
 }
