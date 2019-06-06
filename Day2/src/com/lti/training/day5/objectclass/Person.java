@@ -26,7 +26,7 @@ public class Person  /*extends Object */ {
 	public String toString() {
 		return "Person [name=" + name + ", age=" + age + "]";
 	}
-	@Override
+@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -38,7 +38,7 @@ public class Person  /*extends Object */ {
 	 @Override
 	public boolean equals(Object obj) {
 		Person p= (Person) obj;
-		 if(this.name == p.name && this.age == p.age)
+		if(this.name.equals( p.name ) && this.age == p.age)//if(this.name == p.name && this.age == p.age)
 			 return true;
 		 return false;
 	}

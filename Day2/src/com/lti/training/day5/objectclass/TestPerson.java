@@ -11,5 +11,8 @@ public class TestPerson {
 		Person p2 =new Person("Harry",24);
 		System.out.println(p1==p2); //reference comparison
 		System.out.println(p1.equals(p2)); //value comparison
+		
+		System.out.println(p1.hashCode());
+		System.out.println(p2.hashCode());
 	}
 }
