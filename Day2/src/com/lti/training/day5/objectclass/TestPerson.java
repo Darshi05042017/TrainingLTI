@@ -7,5 +7,9 @@ public class TestPerson {
 		// the below statement in C++ can be written like this:
 		//cout << p1;  to print name and age in c++ we use operator overloading.
 		System.out.println(p1); //what will be the output?
+		
+		Person p2 =new Person("Harry",24);
+		System.out.println(p1==p2); //reference comparison
+		System.out.println(p1.equals(p2)); //value comparison
 	}
 }
