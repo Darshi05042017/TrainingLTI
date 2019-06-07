@@ -14,5 +14,16 @@ public class TestPerson {
 		
 		System.out.println(p1.hashCode());
 		System.out.println(p2.hashCode());
+		
+		try {
+			Person p3=(Person) p1.clone();
+			System.out.println(p3);
+			
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		}
+		p1=null;
+		p2=null;
+		System.gc(); //dont use this in projects
 	}
 }

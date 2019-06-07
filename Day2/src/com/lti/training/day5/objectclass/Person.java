@@ -1,6 +1,10 @@
 package com.lti.training.day5.objectclass;
 
-public class Person  /*extends Object */ {
+//Cloneable interface is an example of
+//marker interfaces in Java
+//Another example is Serializable interface
+//clone is a risky method
+public class Person  /*extends Object */ implements Cloneable {
 
 	private String name;
 	private int age;
@@ -61,6 +65,13 @@ public class Person  /*extends Object */ {
 		return true;
 	}*/
 		
-	
-	
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		// TODO Auto-generated method stub
+		return super.clone();
+	}
+	@Override
+	protected void finalize() throws Throwable {
+		System.out.println("Finalize called");
+	}
 }
