@@ -1,6 +1,6 @@
 package com.lti.BooksToys;
 
-public abstract class Product {
+public abstract class Products {
 	
 	private static int sequence = 1000;
 	
@@ -40,5 +40,9 @@ public abstract class Product {
 	public double generateBill(int quantity) {
 		double total=(price-calcDiscount())*quantity;
 		return total;
+	}
+	public int getQuantity() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
