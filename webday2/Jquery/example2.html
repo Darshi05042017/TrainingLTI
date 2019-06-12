@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Page Title</title>
+    <script src="jquery-3.4.1.js"></script>
+    <script>
+        $(function(){
+            // understanding Dom traversal
+            //css style selectors 
+           // $("li").text("Hello"); 
+           //$("#products").css("color","red");
+           //$("#products >> li").css("color","red");
+           //$("#products > li").css("color","red");
+           //$("#products > ul").css("color","red");
+           //$("#products li:first").css("color","red");
+           //$("#products li:last").css("color","red");
+           //$("#products li:odd").css("color","red");
+           //$("#products li:even").css("color","red");
+           $("#products li:first,#services li:first").css({"color":"red","font-size": "20px"});
+
+
+        })
+    
+    
+    </script>
+    
+</head>
+<body>
+    <ul id="products">
+        <li>Laptop</li>
+        <li>Mobile</li>
+        <ul>
+            <li>Sony</li>
+            <li>Apple</li>
+        </ul>
+        <li>Headphones</li>
+    </ul>
+
+    <ul id="services">
+        <li>Email</li>
+        <li>Chat</li>
+        <li>SMS</li>
+    </ul>
+    
+</body>
+</html>
