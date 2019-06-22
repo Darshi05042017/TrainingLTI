@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+	$(function(){
+		$("#pnrForm").submit(function(evt){
+			evt.preventDefault();
+			var pnrNo = $("#pnrNo").val();
+			var url="http://localhost:1029/rest-intro/rest/pnr/status?pnrNo="+pnrNo;
+			//parsedUrl.param("pnrNo");
+			$.ajax({
+				url : url,//the url we wan tto hit
+				method : 'GET', // Get or post or any other method of Http
+				dataType:'json', // what are we expecting back from the server
+				success : function(response){
+					//alert(JSON.stringify(response));
+					var p1=$("<h3/>").text("Train No" + response.trainNo);
+					var p2=$("<h3/>").text("Date of travel" + response.date);
+					var p3=$("<h3/>").text("Status" + response.status);
+					$("#pnrStatus").html("<h1> Details of PNR no "+pnrNo+"</h1>")
+					.append(p1)
+					.append(p2)
+					.append(p3);
+				}
+			})
+		
+		})
+	})
+</script>
+</head>
+<body>
+<h1>Check the status for your ticket here</h1>
+<form id="pnrForm">
+	Enter PNR number : <input type="number" id="pnrNo">
+	<button type="submit">Check Status</button>
+</form>
+<div id ="pnrStatus"></div>
+</body>
+</html>
