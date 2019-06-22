@@ -1,0 +1,23 @@
+<form (ngSubmit)="authenticate()" (click)="calculate()">
+    <br>
+    <label>Username </label>
+    <input type="text" name="username" [(ngModel)]=username>
+    <br><br>
+    <label>Password </label>
+    <input type="password" name="password" [(ngModel)]=password>
+    <br><br>
+    <button type="submit">Login</button><br>
+    
+    <label>A:</label>
+    <input type="number" name="a" [(ngModel)]=a>
+    <br><br>
+    <label>B:</label>
+    <input type="number" name="b" [(ngModel)]=b>
+    <br><br>
+    <button type="submit">add</button>
+
+
+</form>
+<h1>Output:{{message}}</h1>
+<h2>Result is:{{c}}</h2>
+

@@ -1,0 +1,20 @@
+
+
+<button (click)=display()>Click to view</button>
+<div *ngFor="let p of products">
+
+        <div class="card">
+                <img id="pic" src="assets/{{p.imageUrl}}" alt="Avatar" style="width:20%;margin-top: 20px"/> <br/>
+                <div style="margin-bottom: 2px" class="container">
+                        ID:{{p.id}} <br/>
+                        Name:{{p.name}}<br/>
+                        Price:{{p.price}}<br/>
+                        Quantity:{{p.quantity}}<br/> <br />
+                </div> 
+        </div>
+    </div>
+
+   
+  
+
+    
