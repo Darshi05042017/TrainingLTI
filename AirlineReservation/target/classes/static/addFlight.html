@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add New Flight</title>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
+<script>
+$(function(){
+	$("#addFlight").submit(function(evt){
+		evt.preventDefault();
+		var obj = {
+			flightId : $("#flightId").val(),
+			companyName : $("#companyname").val(),
+			capacity : $("#capacity").val(),
+			from : $("#source").val,
+			to : $("#dest").val(),
+			duration: $("#duration"),
+			departureDate :$("#departureTime"),
+			arrivalTime : $("departureTime"),
+			economyClassSeats : $("#economy"),
+			economyPrice : $("#economyPrice"),
+			bussinessClassSeats : $("#bussiness"),
+			businessPrice : $("#businessPrice"),
+			status :$("#stat").val() 
+		}
+		//var url="http://localhost:9090/register";
+		$.ajax({
+			url : "/addFlight",//the url we wan tto hit
+			method : "POST", // Get or post or any other method of Http
+			data: JSON.stringify(obj), // what are we expecting back from the se
+			contentType: "application/json",
+			success : function(response) {
+				alert(JSON.stringify(response));
+				
+			}
+		})
+	})
+})
+</script>
+</head>
+<body>
+<form id="addFlight">
+Enter Flight Id : <input type="text" id="flightId" /><br/>
+Enter Flight Company Name : <input type="text" id="companyname" /><br/>
+Enter Capacity : <input type="number" id="capacity"/><br/>
+Enter From : <input type="text" id="source"/><br/>
+Enter To : <input type="text" id="dest"/><br/>
+Enter Duration : <input id="duration"/><br/>
+Enter Departure Date and Time :<input type="datetime-local" id="departureTime"/><br/>
+Enter Arrival Date and Time :<input type="datetime-local" id="departureTime"/><br/>
+Class Economy Seats :<input  type="number"      id=economySeats"/><br/>
+Class Economy Price :<input  type="number" id=economyPrice"/><br/>
+Class Bussiness Seats :<input type="number" id=businessSeats"/><br/>
+Class Business Price :<input id=businessPrice"/><br/>
+Flight Status :<input type="text" id="stat"/><br/>
+<button type="submit">Add Flight</button>
+</form>
+</body>
+</html>
