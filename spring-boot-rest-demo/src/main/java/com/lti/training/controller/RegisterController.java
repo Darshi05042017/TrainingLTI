@@ -18,7 +18,7 @@ public class RegisterController {
 	@Autowired
 	private RegisterService registerService;
 
-	@RequestMapping(path="/register", method=RequestMethod.GET)
+	@RequestMapping(path="/register", method=RequestMethod.POST)
 		public StatusDTO register(@RequestBody UserDTO userDTO) {
 		
 		    return registerService.save(userDTO);

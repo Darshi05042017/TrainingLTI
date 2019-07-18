@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="Login.css" />
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+	//Check if the localStorage object exists
+	$(function() {
+		$("#login").submit(function(evt) {
+			evt.preventDefault();
+			var obj = {
+				email : $("#email").val(),
+				password : $("#password").val()
+			}
+// 			var email = $("#email").val();
+// 			var password = $("#password").val();
+			var url = '/adminLogin';
+			$.ajax({
+				url : url, 
+				method : 'POST',
+				data : JSON.stringify(obj),
+				contentType : 'application/json',
+				success : function(response) {
+					var email = response.email;
+					if (response.customerId==-1)
+						alert("Wrong password !!");
+					else{
+						sessionStorage.setItem("customerId",response.customerId);
+						sessionStorage.setItem("firstName",response.firstName);
+						window.location.replace("index.html");
+					}
+						
+				}
+			})
+		})
+	})
+</script>
+</head>
+<body>
+	
+
+	<div class="login">
+		<form id="login" method="post">
+			<center>
+				<b>LOGIN</b>
+			</center>
+			<br /> ENTER EMAIL: <input type="email" placeholder="email"
+				id="email" required /><br />
+			<br /> ENTER PASSWORD: <input type="password" placeholder="password"
+				id="password" required /><br />
+			<br /> <input class="button" type="submit" value="LOGIN" /><br />
+			<br />
+			
+		</form>
+	</div>
+
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	
+</body>
+</html>

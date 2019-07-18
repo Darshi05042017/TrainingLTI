@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<meta charset="ISO-8859-1">
+<title>Registration Form</title>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
+<script>
+$(function(){
+	$("#frm1").submit(function(evt){
+		evt.preventDefault();
+		var obj = {
+			name : $("#name").val(),
+			password:$("#password").val(),
+			
+		}
+		// var url="http://localhost:9090/register";
+		$.ajax({
+			url : '/userLogin',//the url we wan tto hit
+			method : 'POST', // Get or post or any other method of Http
+			data:JSON.stringify(obj), // what are we expecting back from the se
+			contentType :'application/json',
+			
+			success : function(response) {
+				if(response==null)
+					alert("No user");
+				else
+					alert(JSON.stringify(response));
+			}
+		
+				
+			}
+		})
+	})
+})
+</script>
+</head>
+<body>
+<form id="frm1">
+Enter Your Name : <input id="name" required="required"/><br/>
+
+Enter Your PassWord : <input id="password" required="required"/><br/>
+
+<button type="submit">LOGIN</button>
+
+</form>
+
+</body>
+</html>

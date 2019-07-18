@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Passenger Details</title>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
+<script>
+function addinputFields(){
+    var number = document.getElementById("member").value;
+
+    for (i=0;i<number;i++){
+
+        var input = document.createElement("input");
+        input.type = "text";
+        container.appendChild(input);
+        container.appendChild(document.createElement("br"));
+    }
+}
+
+</script>
+</head>
+<body>
+
+
+ Number of members:<input type="text" id="member" name="member" value=""><br />
+<button id="btn" onclick="addinputFields()">Button</button>
+    <div id="container">
+    </div>
+
+
+
+
+
+</body>
+</html>

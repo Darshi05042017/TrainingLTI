@@ -20,10 +20,10 @@ public class RegisterDao {
 		return u.getId();
 	}
 	
-	public User search(String email) {
+	/*public User search(String email) {
 		Query q=entitymanager.createQuery("select u from User u where u.email =:em");
 		q.setParameter("em",email);
 	   User us=(User)q.getSingleResult();
 		return us;
-	}
+	}*/
 }

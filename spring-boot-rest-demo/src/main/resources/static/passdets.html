@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Passenger Details</title>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
+<script>
+$(function(){
+	
+	$("#frm").submit(function(evt){
+		evt.preventDefault();
+		var obj = {
+			
+			gender :$("input[name='gender']:checked").val(),
+			name : $("#name").val(),
+			phNo :$("#phNo").val()			
+		}
+		alert(JSON.stringify(obj));
+		//var url="http://localhost:9090/register";
+		$.ajax({
+			url : '/passdets',//the url we wan tto hit
+			method : 'POST', // Get or post or any other method of Http
+			data:JSON.stringify(obj), // what are we expecting back from the se
+			contentType :'application/json',
+			success : function(response) {
+				alert(JSON.stringify(response));
+			}
+
+		})
+	})
+})
+		
+		function addinputFields(){
+		    var number = $("#member").val();
+		    for (i=0;i<number;i++){
+		    	$form = $("<form></form>");
+		    	
+		    	$form.append('<br/>Enter Gender : <input type="radio" name="gender" id="choicemale" value="male"> Male');
+		    	$form.append('<input type="radio" name="gender" id="choicefemale" value="female"> Female');
+		    	$form.append('<input type="radio" name="gender" id="choicemale"value="other"> Other<br>');
+		    	$form.append('Enter name : <input id="name" /><br/>');
+		    	$form.append('Enter phNo : <input id="phNo" /><br/>');
+		    	
+		    	$('body').append($form);
+		    	
+		    	
+		        	         
+		    
+		    }
+		}
+		
+</script>
+</head>
+<body>
+<form id="frm">
+
+Enter Gender : 
+<input type="radio" name="gender" id="choicemale" value="male"> Male
+<input type="radio" name="gender" id="choicefemale" value="female"> Female
+<input type="radio" name="gender" id="choicemale"value="other"> Other<br>
+Enter name : <input id="name" /><br/>
+
+Enter phNo : <input id="phNo" /><br/>
+
+No of members:<input type="number" id="member" name="member" ><br />
+<input type="button" id="btn" onclick="addinputFields()">Add Passenger Detail</input>
+    <div id="container">
+    </div>
+
+
+	
+    
+<button type="submit">DONE</button>
+</form>
+
+</body>
+</html>

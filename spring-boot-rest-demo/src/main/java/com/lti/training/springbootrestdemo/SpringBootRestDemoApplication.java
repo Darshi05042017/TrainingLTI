@@ -9,12 +9,11 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan("com.lti.training.controller")
 @ComponentScan("com.lti.training.service")
 @ComponentScan("com.lti.training.dao")
-@ComponentScan("com.lti.training.DTO")
 @EntityScan("com.lti.training.entity")
 public class SpringBootRestDemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootRestDemoApplication.class, args);
-	}
+	}    
 
 }

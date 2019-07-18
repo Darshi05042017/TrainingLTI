@@ -4,36 +4,48 @@
 <meta charset="ISO-8859-1">
 <title>Registration Form</title>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
-<script>
-$(function(){
-	$("#frm").submit(function(evt){
-		evt.preventDefault();
-		var obj = {
-			name : $("#name").val(),
-			age: $("#age").val(),
-			email :$("#email").val() 
-		}
-		//var url="http://localhost:9090/register";
-		$.ajax({
-			url : '/register',//the url we wan tto hit
-			method : 'POST', // Get or post or any other method of Http
-			data:JSON.stringify(obj), // what are we expecting back from the se
-			contentType :'application/json',
-			success : function(response) {
-				alert(JSON.stringify(response));
-				
-			}
-		})
-	})
-})
+<script type="text/javascript">
+    function Validate() {
+        var pass = document.getElementById("pass").value;
+        var cnfpass = document.getElementById("cnfpass").value;
+        if (pass != cnfpass) {
+            alert("Passwords do not match.");
+        }
+            else{
+        		var obj = {
+        				name : $("#name").val(),
+        				email :$("#email").val(),
+        				dob :$("#dob").val(),
+        				phNo :$("#phNo").val(),
+        				pass :$("#pass").val(),
+        				cnfpass :$("#cnfpass").val()
+        			}
+        		$.ajax({
+        			url : '/register',//the url we wan tto hit
+        			method : 'POST', // Get or post or any other method of Http
+        			data:JSON.stringify(obj), // what are we expecting back from the se
+        			contentType :'application/json',
+        			success : function(response) {
+        				alert(JSON.stringify(response));
+        				
+        			}
+        		})
+            }
+  }
 </script>
 </head>
 <body>
 <form id="frm">
-Enter name : <input id="name" /><br/>
-Enter age : <input id="age"/><br/>
-Enter email : <input id="email"/><br/>
-<button type="submit">Register</button>
+Enter name : <input id="name" required="required"/><br/>
+Enter email : <input id="email" required="required"/><br/>
+Enter dob : <input id="dob"  required="required"/><br/>
+Enter phNo : <input id="phNo" required="required"/><br/>
+Enter pass : <input id="pass" required="required"/><br/>
+Enter cnfpass : <input id="cnfpass" required="required" /><br/>
+
+
+<input class="button" type="button" id="btnSubmit" value="Submit" onclick="return Validate()"  />
+<!--  <button type="submit">REGISTER</button>-->
 </form>
 
 </body>
