@@ -6,19 +6,19 @@ import org.springframework.stereotype.Component;
 public class RegisterDTO {
 
 	
-	private int id;
+	//private int id;
 	private String name;
 	private String email;
 	private String dob;
 	private int phNo;
 	private int pass;
 	private int cnfpass;
-	public int getId() {
+	/*public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
+	}*/
 	public String getName() {
 		return name;
 	}

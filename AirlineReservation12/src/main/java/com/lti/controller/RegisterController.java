@@ -17,9 +17,9 @@ public class RegisterController {
 	@Autowired
 	private RegisterService registerService;
 
-	@RequestMapping(path="/register", method=RequestMethod.POST)
+	@RequestMapping(path="/registered", method=RequestMethod.POST)
 		public StatusDTO register(@RequestBody RegisterDTO registerDTO) {
-		System.out.println("controller");
+		System.out.println(registerDTO);
 		return registerService.save(registerDTO);
 	   }
 	

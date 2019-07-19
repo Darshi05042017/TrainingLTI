@@ -10,12 +10,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 
-<title>UserLogin</title>
+<title>AdminLogin</title>
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <style type="text/css">
 	body {
 		color: #fff;
-		background: url('flight4.jpg');
+		background: url('flight7.png');
 		background-size:cover;
 	}
 	.form-control {
@@ -109,7 +109,7 @@ $(function(){
 					//alert(obj.email);
 		$.ajax({
 			
-			url:'/userLogin?email='+email, //+'&password='+password;
+			url:'/adminLogin?email='+email, //+'&password='+password;
 		
 			method:'GET',
 			
@@ -148,7 +148,7 @@ $(function(){
 		<!--  <div class="avatar">
 			<img src="avatar.png" alt="Avatar">
 		</div>-->
-        <h2 class="text-center">User Login</h2>   
+        <h2 class="text-center">Admin Login</h2>   
         <div class="form-group">
         	<input type="email" class="form-control" id="email" name="email" placeholder="email" required="required">
         </div>

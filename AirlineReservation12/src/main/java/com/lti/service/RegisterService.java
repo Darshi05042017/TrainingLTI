@@ -21,7 +21,7 @@ private RegisterDao registerDao;
 public StatusDTO save(RegisterDTO registerDto){
 		
 Register r1 = new Register();
-		
+	
 	r1.setName(registerDto.getName());
 	r1.setEmail(registerDto.getEmail());
 	r1.setPhNo(registerDto.getPhNo());

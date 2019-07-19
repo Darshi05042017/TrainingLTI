@@ -1,5 +1,6 @@
 package com.lti.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -8,10 +9,12 @@ import javax.persistence.Table;
 @Entity
 @Table(name="AR_TBL_REG")
 public class Register {
+	
+			@Id
 		    @GeneratedValue
 			private int id;
 			private String name;
-			@Id
+			@Column(unique = true)
 			private String email;
 			private String dob;
 			private int phNo;
